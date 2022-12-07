@@ -1,7 +1,9 @@
 const {validationResult} = require("express-validator");
+
 const  ErrorHandler = (error, req, res, next) =>  {
     res.status(error.status || 500).send({error: true, message: error.message || 'Internal Server Error'})
 }
+
 const throwError = (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

@@ -4,8 +4,7 @@ const {api} = require('../controllers/api');
 const {use, throwError} = require("../middlewares/error-handler");
 
 const cache = require("../../ruteCache");
-const { body, param, query } = require("express-validator");
-const { initParams } = require("request");
+const { query } = require("express-validator");
 
 router.get("/quote",
     query('from_currency_code').isString(),

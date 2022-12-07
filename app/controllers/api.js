@@ -1,7 +1,6 @@
 
 const request = require('request')
 const api = async (req, res) => {
-
  request({
     method: 'GET',
     uri: `https://api.apilayer.com/currency_data/convert?from=${req.query.from_currency_code}&to=${req.query.to_currency_code}&amount=${req.query.amount}`,
