@@ -2,6 +2,7 @@ const request = require('request'
 
 )
 const api = async (req, res) => {  
+  
 /**
  * @TODO logic of exchange 
 */    
@@ -16,10 +17,9 @@ const api = async (req, res) => {
       const data = { 
          exchange_rate: Math.round(api.info.quote * 1000) / 1000 ,
          currency_code: api.query.to,
-         amout1: (Math.round(api.result * 10000) / 100), 
-         api
+         amount:  Math.round(Math.round(api.info.quote * 1000) / 1000 * req.query.amount),
+         amount1: api.result * 100, 
         };
-      
       res.json(data);
     }
   })
