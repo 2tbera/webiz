@@ -1,7 +1,9 @@
 const NodeCache = require('node-cache');
 const cache = new NodeCache();
 
-
+/**
+ * @description Ceche Middleware 
+*/    
 module.exports = async (req , res , next) => {
 
     if(req.method !== 'GET') {
